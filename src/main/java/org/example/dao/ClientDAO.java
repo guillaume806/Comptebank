@@ -50,7 +50,17 @@ public class ClientDAO extends BaseDAO<ClientDAO> {
 
     @Override
     public ClientDAO get(int id) throws SQLException {
-        return null;
+        ClientDAO clientDAO = null;
+        request = "select * from client where id = ?";
+        statement = _connection.prepareStatement(request);
+        statement.setInt(1, id);
+        resultSet = statement.executeQuery();
+        if(resultSet.next()) {
+            person = new Person(resultSet.getInt("id"),
+                    resultSet.getString("first_name"),
+                    resultSet.getString("last_name"));
+        }
+        return person;
     }
 
     @Override

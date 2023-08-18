@@ -3,7 +3,7 @@ package org.example.model;
 import java.util.List;
 
 public class Sessionbank {
-
+    private  int id;
     private double solde;
     private int clientID;
     private List<Operate> operates;
@@ -38,9 +38,9 @@ public class Sessionbank {
         this.operates = operates;
     }
 
-    public int getId(int anInt) {
+    public int getId(int id) {
     }
 
-    public void setId(int anInt) {
+    public void setId(int id) {
     }
 }

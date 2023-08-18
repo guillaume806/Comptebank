@@ -49,7 +49,16 @@ public class SessionbankDAO extends BaseDAO<Sessionbank> {
 
     @Override
     public Sessionbank get(int id) throws SQLException {
-        return null;
+        Sessionbank sessionbank = null;
+        request = "select * from session_bank where id_client = ?";
+        statement = _connection.prepareStatement(request);
+        statement.setInt(1, id);
+        resultSet = statement.executeQuery();
+        if(resultSet.next()) {
+            sessionbank = new Sessionbank(resultSet.getInt("id"),
+                    resultSet.getDouble("solde_number");
+        }
+        return person;
     }
 
     @Override

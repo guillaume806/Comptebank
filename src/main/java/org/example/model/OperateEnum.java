@@ -1,4 +1,5 @@
 package org.example.model;
 
-public enum OperateEnum {deposit, withdrawl
+public enum OperateEnum {
+    deposit, withdrawl
 }
