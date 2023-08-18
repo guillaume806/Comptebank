@@ -1,5 +1,6 @@
 package org.example.dao;
 
+import org.example.model.Client;
 import org.example.model.Operate;
 
 import java.sql.Connection;
@@ -25,6 +26,13 @@ import java.util.List;
         public abstract boolean save(T element) throws SQLException;
         public abstract boolean update(T element) throws SQLException;
         public abstract boolean delete(T element) throws SQLException;
+
+        public abstract boolean save(Client element) throws SQLException;
+
+        public abstract boolean update(Client element) throws SQLException;
+
+        public abstract boolean delete(Client element) throws SQLException;
+
         public abstract T get(int id) throws SQLException;
         public abstract List<T> get() throws SQLException;
 

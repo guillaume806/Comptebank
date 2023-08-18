@@ -14,7 +14,7 @@ public class Sessionbank {
         this.operates = operates;
     }
 
-    public String getSolde() {
+    public double getSolde() {
         return solde;
     }
 
@@ -22,7 +22,7 @@ public class Sessionbank {
         this.solde = solde;
     }
 
-    public String getClientID() {
+    public int getClientID() {
         return clientID;
     }
 
@@ -38,6 +38,9 @@ public class Sessionbank {
         this.operates = operates;
     }
 
-    public int getId() {
+    public int getId(int anInt) {
+    }
+
+    public void setId(int anInt) {
     }
 }
