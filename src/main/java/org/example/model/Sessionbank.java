@@ -13,4 +13,31 @@ public class Sessionbank {
         this.clientID = clientID;
         this.operates = operates;
     }
+
+    public double getSolde() {
+        return solde;
+    }
+
+    public void setSolde(double solde) {
+        this.solde = solde;
+    }
+
+    public int getClientID() {
+        return clientID;
+    }
+
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
+    }
+
+    public List<Operate> getOperates() {
+        return operates;
+    }
+
+    public void setOperates(List<Operate> operates) {
+        this.operates = operates;
+    }
+
+    public int getId() {
+    }
 }

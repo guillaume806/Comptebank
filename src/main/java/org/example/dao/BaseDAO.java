@@ -21,11 +21,13 @@ import java.util.List;
             _connection = connection;
         }
 
-        public abstract boolean deposit(T element) throws SQLException;
-        public abstract boolean withdrawal(T element) throws SQLException;
+
+        public abstract boolean save(T element) throws SQLException;
+        public abstract boolean update(T element) throws SQLException;
         public abstract boolean delete(T element) throws SQLException;
-//        public abstract T get(int id) throws SQLException;
-        public abstract List<OperateSolde> get() throws SQLException;
+        public abstract T get(int id) throws SQLException;
+        public abstract List<T> get() throws SQLException;
+
 
     }
 

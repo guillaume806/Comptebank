@@ -2,13 +2,21 @@ package org.example.model;
 
 public class Operate {
 
-    private int number;
+    private int id;
     private double Rising;
-    private OperationEnum statut;
+    private enum OperationEnum;
 
-    public Operate(int number, double rising, OperationEnum statut) {
-        this.number = number;
+
+    public Operate(int id, double rising) {
+        this.id = id;
         Rising = rising;
-        this.statut = statut;
+    }
+
+    public double getRising() {
+        return Rising;
+    }
+
+    public void setRising(double rising) {
+        Rising = rising;
     }
 }
