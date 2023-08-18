@@ -16,22 +16,18 @@ public class SessionbankDAO extends BaseDAO<Sessionbank> {
 
     @Override
     public boolean save(Sessionbank element) throws SQLException {
-        return false;
+        request = "INSERT INTO session_bank (client_id, solde_number) VALUES (?,?)";
+        statement = _connection.prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
+        statement.setString(1, element.getSolde());
+        statement.setString(2, element.getClientID());
+        int nbRows = statement.executeUpdate();
+        resultSet = statement.getGeneratedKeys();
+        if(resultSet.next()){
+            element.setClientID(resultSet.getInt(1));
+        }
+        return nbRows == 1;
     }
 
-//    @Override
-//    public boolean deposit( element) throws SQLException {
-//        request = "INSERT INTO Session_bank (first_name, last_name) VALUES (?,?)";
-//        statement = _connection.prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
-//        statement.setString(1, element.getFirstName());
-//        statement.setString(2, element.getLastName());
-//        int nbRows = statement.executeUpdate();
-//        resultSet = statement.getGeneratedKeys();
-//        if(resultSet.next()){
-//            element.setId(resultSet.getInt(1));
-//        }
-//        return nbRows == 1;
-//    }
 
     @Override
     public boolean update(Sessionbank element) throws SQLException {

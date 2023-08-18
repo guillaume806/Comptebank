@@ -22,7 +22,7 @@ public class Sessionbank {
         this.solde = solde;
     }
 
-    public int getClientID() {
+    public String getClientID() {
         return clientID;
     }
 
