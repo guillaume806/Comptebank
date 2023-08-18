@@ -58,7 +58,7 @@ public class SessionbankDAO extends BaseDAO<Sessionbank> {
             sessionbank = new Sessionbank(resultSet.getInt("id"),
                     resultSet.getDouble("solde_number");
         }
-        return person;
+        return sessionbank;
     }
 
     @Override

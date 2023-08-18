@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-public class ClientDAO extends BaseDAO<ClientDAO> {
+public class ClientDAO extends BaseDAO<Client> {
 
     public ClientDAO(Connection connection) {
         super(connection);
@@ -49,18 +49,18 @@ public class ClientDAO extends BaseDAO<ClientDAO> {
     }
 
     @Override
-    public ClientDAO get(int id) throws SQLException {
-        ClientDAO clientDAO = null;
+    public Client get(int id) throws SQLException {
+        Client client = null;
         request = "select * from client where id = ?";
         statement = _connection.prepareStatement(request);
         statement.setInt(1, id);
         resultSet = statement.executeQuery();
         if(resultSet.next()) {
-            person = new Person(resultSet.getInt("id"),
+            client = new Client(resultSet.getInt("id"),
                     resultSet.getString("first_name"),
                     resultSet.getString("last_name"));
         }
-        return person;
+        return client;
     }
 
     @Override
