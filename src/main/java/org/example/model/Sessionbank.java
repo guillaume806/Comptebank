@@ -14,7 +14,7 @@ public class Sessionbank {
         this.operates = operates;
     }
 
-    public double getSolde() {
+    public String getSolde() {
         return solde;
     }
 

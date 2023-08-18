@@ -4,7 +4,7 @@ public class Operate {
 
     private int id;
     private double Rising;
-    private enum OperationEnum;
+    private enum OperationEnum{};
 
 
     public Operate(int id, double rising) {

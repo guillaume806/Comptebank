@@ -37,7 +37,7 @@ public class SessionbankDAO extends BaseDAO<Sessionbank> {
     public boolean update(Sessionbank element) throws SQLException {
         request = "UPDATE Session_bank set solde_number = ?";
         statement = _connection.prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
-        statement.setString(1,element.getFirstName());
+        statement.setString(1,element.getSolde());
 
         int nbRow = statement.executeUpdate();
         return nbRow ==1;
@@ -62,39 +62,6 @@ public class SessionbankDAO extends BaseDAO<Sessionbank> {
         return null;
     }
 
-//    @Override
-//    public boolean delete(Person element) throws SQLException {
 
-//    }
-//
-//    @Override
-//    public Person get(int id) throws SQLException {
-//        Person person = null;
-//        request = "select * from person where id = ?";
-//        statement = _connection.prepareStatement(request);
-//        statement.setInt(1, id);
-//        resultSet = statement.executeQuery();
-//        if(resultSet.next()) {
-//            person = new Person(resultSet.getInt("id"),
-//                    resultSet.getString("first_name"),
-//                    resultSet.getString("last_name"));
-//        }
-//        return person;
-//    }
-//
-//    @Override
-//    public List<Person> get() throws SQLException {
-//        List<Person> result = new ArrayList<>();
-//        request = "select * from person";
-//        statement = _connection.prepareStatement(request);
-//        resultSet = statement.executeQuery();
-//        while(resultSet.next()){
-//            Person person = new Person(resultSet.getInt("id"),
-//                    resultSet.getString("first_name"),
-//                    resultSet.getString("last_name"));
-//            result.add(person);
-//        }
-//        return result;
-//    }
 
 }
